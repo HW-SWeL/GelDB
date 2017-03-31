@@ -1,0 +1,38 @@
+<header ng-include="'header.html'"></header>
+<div id="resPage">
+  <div id="enterForm">
+    <h2>Enter a new chemical record</h2>
+
+    <form id="newDataForm" name="newDataForm" ng-submit="enterToDB()">
+      <input ng-repeat = "item in insertBindings.properties" class="formInput" placeholder="{{ item.place }}" ng-model="item.value" required="true">
+
+          <h4 id="addButton" ng-hide="reactionsToAdd.length">Please add a reaction</h4>
+          <label ng-repeat = "react in reactionsToAdd">{{ react }}</label>
+        </br>
+      </br>
+      <button class="md-raised md-button md-ink-ripple" type="submit"  id="srch" ng-click="insertDB()" ng-disabled="newDataForm.$invalid || !reactionsToAdd.length">Submit Data</button>
+    </form>
+
+  </div>
+
+  <div id="reactionForm">
+    <form  id="two">
+    <h2>Add reaction details</h2>
+
+    <input ng-repeat = "prop in reactionInsertBindings.properties" class="formInput" placeholder="{{ prop.place }}" ng-model="prop.value" type="text" required="">
+    <label class="formInput">
+      Critical Gel Concentration Unit: </br>
+        <input type="radio" ng-model="reactionInsertBindings.properties[4].unit" value="UO:0000063">
+         millimolars
+      <!--</label>
+      <label>-->
+          <input type="radio" ng-model="reactionInsertBindings.properties[4].unit" value="EFO:0004384">
+           Percentage-Weight
+        </label>
+        <button class="md-raised md-button md-ink-ripple" ng-click="insertReaction()">Submit Reaction</button>
+    <!--<button ng-click="insertReaction()">Confirm</button>-->
+
+    </form>
+
+  </div>
+</div>

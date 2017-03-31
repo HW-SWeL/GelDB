@@ -1,0 +1,12 @@
+<header ng-include="'header.html'"></header>
+<div id="selectPage">
+    <h3>It looks like you've searched for a {{Data.flag}}!</h3>
+  </br> Here are the chemicals which use {{Data.chem}} in a reaction:
+</br>
+</br>
+  <div id="chems" ng-repeat="item in Data.dat" class="chemSelect" ng-click="$parent.searchString= item.name; searchDB()">
+      {{ item.name}}
+  </div>
+</br>
+</div>
+<!-- searchDB(item.name)-->

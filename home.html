@@ -1,0 +1,47 @@
+<div ng-controller="homeController">
+<div id="mainContent">
+<header ng-include="'header.html'"></header>
+  <!--<div id="searchBox">-->
+    <!--<h2 id="searchHeader">Search the Database</h2>-->
+    <h1 class="mainBoxMove">Welcome to <span class="orangeWord">GelDB</span>!</h1>
+    <div id="cont">
+      <h2>Find a Gel</h2>
+  <form id="search" class="srch" ng-submit="searchDB()">
+    <input type="text" id="DBSearch" placeholder="Search..." ng-model="searchString"></input>
+    <button class="md-raised md-button md-ink-ripple" type="submit"  id="srch">Search</button>
+  </form>
+  <!--</div>-->
+  <!--<div id="detailsBox">-->
+  </br>
+    GelDB can be searched by:
+      <span ng-repeat="item in props">
+        {{ item }}
+      </span>
+    </div>
+
+    <div id="dbStatistics" class="mainBoxMove">
+        There are currently {{ numGels }} gels in the database
+    </div>
+  <!--</div>-->
+</div>
+<div id="SecondaryContent">
+    <div id="secondaryBox1">
+      <h2>No need to create an account!</h2>
+      Simply log in with your existing ORCID account to track any contributions you make to the database. </br> If you don't have an ORCID iD, you can
+      create one <a href="https://orcid.org">on the ORCID site</a>.
+    </br>
+  </br>
+    </div>
+    <div id="secondaryBox2">
+      <h2>Data to Deposit?</h2>
+      If you have data on a chemical substance which is not already in GelDB, you can enter it here!</br></br>
+        <button class="md-raised md-button md-ink-ripple" type="button" id="loginButton" ng-click="testReq()"> Enter Data
+        </button>
+    </div>
+  <div id="secondaryBox3">
+    <h2>About</h3>
+      GelDB is a free resource containing data on many gel substances. The database is searchable by many different values.
+      If you want to make a contribution to the database, click the button on the left.
+</div>
+</div>
+</div>

@@ -1,0 +1,460 @@
+.navBar md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0;
+}
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*border-bottom: thin solid #f75963;
+    background-color: rgba(211,211,211,0.3);*/
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #305e82;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 350;
+    transition: 0.3s;
+    font-size: 17px;
+}
+#test{
+  float: right;
+}
+
+#log{
+  max-width: 45% !important;
+  max-height: 10% !important;
+  /*padding-right: 10%;*/
+  background-color: #f9852c;
+  color: white;
+  font-weight: 350;
+}
+
+#headerSearch{
+  padding: 14px 16px;
+  border: 0px solid;
+  width: 200%;
+  background-color: transparent;
+  color: #f9852c;
+}
+
+#headMove{
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
+input:focus, .expanding:focus{
+  outline: none;
+}
+
+#test2{
+  margin-left: 40%;
+}
+
+i{
+  padding: 14px 16px;
+  color: #f9852c;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {color: grey; }
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+li.active {
+  border-bottom: thick solid #305e82;
+}
+
+html, body{
+  max-width: 100%;
+  height: 100%;
+  /*padding: 2%;*/
+
+  /*background-image:
+    linear-gradient(
+      #e3eaed, #9ea2a3
+    );*/
+    /*background-color: #e6e8ed;*/
+    -webkit-tap-highlight-color:transparent;
+    background-color: white;
+}
+
+.md-padding{
+  background-color: #e3eaed;
+}
+
+.buttons{
+  font-weight: bolder;
+}
+
+#searchHeader{
+  color: #305e82;
+}
+
+#mainContent{
+  width: 100%;
+  height: 70%;
+  background-color: #286A90;
+  /*background-image: url("https://science-math.wright.edu/sites/science-math.wright.edu/files/slider/images/background2_1.jpg");*/
+  /*border-bottom: thin solid #305e82;*/
+}
+
+#SecondaryContent{
+  width: 100%;
+
+  overflow: hidden;
+  /*background-color: #f2f4f7;*/
+  background-color: white;
+  position: absolute;
+}
+.mainBoxMove{
+  margin-left: 3%;
+}
+#SecondaryContent > div{
+  float: left;
+  width: 30%;
+  padding: 1%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#searchBox{
+  width: 45%;
+  height: 25%;
+  float: left;
+  padding: 2%;
+}
+
+#dbStatistics{
+  color: white;
+  font-size: 20;
+}
+
+#detailsBox{
+  padding-top: 5%;
+  width: 50%;
+  height: 25%;
+  float: right;
+  /*background-color: blue;*/
+}
+
+#login{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+#secondaryBox1{
+
+}
+
+#loginButton:hover{
+  background-color: #f9852c;
+  color: white;
+}
+
+#DBSearch{
+  width: 70%;
+  height: 50px;
+
+}
+
+#cont{
+  margin: 5% 10% 5% 20%;
+}
+
+.orangeWord{
+  color: #f9852c;
+}
+
+#logo{
+  color: #f9852c;
+  padding: 14px 16px;
+  font-weight:bolder;
+  cursor: pointer;
+}
+
+#srch{
+  /*margin-left: -9.5%;*/
+
+  background-color: #f9852c;
+  color: white;
+  margin-bottom: 1%;
+}
+
+#resPage{
+  width: 100%;
+  height: 100%;
+  /*background-color: #286A90;*/
+}
+
+#structureImage{
+  width: 40%;
+  float: left;
+  margin-left: 2%;
+}
+
+#properties{
+width: 55%;
+float: right;
+padding: 1%;
+}
+
+#resInfo{
+width: 75%;
+float: left;
+height: 100%;
+
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#historyDetails{
+  width: 20%;
+  float: right;
+  padding-right: 3%;
+}
+
+.rep{
+  margin: 5%;
+}
+
+.propTitle{
+  float: left;
+}
+.propValue{
+  float: right;
+}
+
+#t{
+  width: 100%;
+  height: 45%;
+}
+
+#reactionDetails{
+  /*clear:both;
+  width: 50%;*/
+  width: 100%;
+  height: 75%;
+  overflow-y: scroll;
+}
+
+md-dialog .md-button{
+  background-color: white !important;
+  color: black !important;
+}
+
+md-dialog .md-button:not([disabled]):hover {
+    background-color: #f9852c !important;
+    color: white !important;
+}
+
+md-dialog .md-input{
+  border-bottom: thin solid #f9852c !important;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.1s;
+}
+
+.expanding{
+  background-color: #286A90;
+  margin-left: 5%;
+  padding: 2%;
+  border: 1px solid;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#update{
+  padding: 2%;
+  margin-left: 5%;
+}
+
+#update:hover{
+  background-color: #f9852c;
+  color: white;
+}
+
+table{
+  width: 100%;
+  padding: 1%;
+  color: inherit;
+}
+td{
+  padding: 1%;
+}
+
+/*JUST TESTING HERE#####################*/
+
+#one{
+  clear: both;
+  float: left;
+}
+
+#two{
+    float: right;
+}
+
+#formHolder{
+  clear: both;
+  height: 100%;
+  margin: 5%;
+  margin-bottom: 5%;
+}
+
+#formHolder h1, .formInput::-webkit-input-placeholder, #historyDetails button {
+  font-family: 'roboto', sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#formHolder h1{
+  height: 100px;
+  width: 100%;
+  font-size: 18px;
+  background: #286A90;
+  color: white;
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+#formHolder form {
+  box-sizing: border-box;
+  height: 50%;
+  width: 45%;
+  /*margin: 100px auto 0;*/
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding-bottom: 40px;
+  border-radius: 3px;
+  overflow-y: scroll;
+}
+#formHolder form h1 {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.formInput {
+  margin: 40px 25px;
+  width: 300px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #286A90;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #286A90 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #286A90 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #286A90;
+}
+#formHolder .formInput:focus, .formInput:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+ .formInput:focus::-webkit-input-placeholder, .formInput:valid::-webkit-input-placeholder {
+  color: #286A90;
+  font-size: 11px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  visibility: visible !important;
+}
+
+#formHolder button {
+  border: none;
+  background: #286A90;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+#formHolder button:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#enterForm{
+  margin-left: 20%;
+  float: left;
+
+}
+
+#addButton:hover{
+  cursor: pointer;
+}
+
+#reactionForm{
+  margin-right: 20%;
+  float: right;
+}
+
+#selectPage{
+  width: 100%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+.chemSelect{
+  width: 40%;
+  cursor: pointer;
+  background-color: #286A90;
+  padding: 2%;
+  color: white;
+  border-radius: 5px;
+}

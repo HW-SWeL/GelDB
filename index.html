@@ -1,0 +1,51 @@
+<html>
+<head>
+<base href="/~craig/index.html" />
+  <title> Gel Database</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-aria.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script type="text/javascript">
+      angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script>
+  <link rel="stylesheet" href="gelsStyle.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+  <body ng-app='gelApp'>
+      <!--<div ng-controller="gelController" ng-cloak='' class='navBar'>
+        <md-content class="md-padding">
+          <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+
+            <md-nav-item class='buttons' md-nav-href='Home' name="Home">Home</md-nav-item>
+            <md-nav-item md-nav-href='page2' name="page2">Page Two</md-nav-item>
+            <md-nav-item md-nav-href='About' name="About">About</md-nav-item>
+       these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+
+            </md-nav-bar>
+
+          </md-content>-->
+          <div ng-view>
+
+
+            <!--<span>{{currentNavItem}}</span>-->
+          </div>
+    <!--  </div>-->
+    <!--<script src="gels.js" ></script>-->
+    <script src="gelController.js" ></script>
+    <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  </body>
+</html>

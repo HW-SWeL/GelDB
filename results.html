@@ -1,0 +1,130 @@
+<div id="resPage" ng-controller="gelController">
+<header ng-include="'header.html'"></header>
+<div id="resInfo">  <!--Retrieve information about gel and put here -->
+  <div id="structureImage">
+    <img src= "{{ Data.img }}" alt="Unfortunately, we were unable to find chemical structure image">
+  </div>
+
+  <div id="properties">
+    <h4> {{ Data.dat.name }} </h4>
+    <div ng-repeat = "item in propertyNames" class="rep">
+      <div id="{{ item.id }}" class="propTitle">
+        {{ item.id }}
+      </div>
+      <div class="propValue">
+        {{ item.value }}
+      </div>
+    </br>
+    </div>
+  </br>
+</br>
+  </div>
+<div id="t">
+<h2 id="headMove">Solvents</h2>
+  <div id="reactionDetails">
+    <div ng-repeat = "reaction in Data.dat.solventReaction">
+      <div ng-click="showme = !showme" class="expanding">
+        {{ reaction.hasSolvent.name }}
+
+      <div ng-show="showme" class="animate-show-hide">
+        <table>
+          <tr>
+            <td> Solvent </td>
+            <td> SMILES </td>
+            <td> CGC </td>
+            <td> Solubility </td>
+            <td> Notes </td>
+            <td> Ratio </td>
+          </tr>
+          <tr>
+            <td> {{ reaction.hasSolvent.name }} </td>
+            <td> {{ reaction.hasSolvent.SMILES }} </td>
+            <td> {{ reaction.hasCGC.hasValue }} {{ reaction.hasCGC.hasUnit.label }} </td>
+            <td>     <table>
+                  <tr>
+                      <td>∆ D</td>
+                      <td>∆ P</td>
+                      <td>∆ H</td>
+                      <td>Mol. Vol</td>
+                  </tr>
+                  <tr>
+                      <td>{{ reaction.solubility.dD }}</td>
+                      <td>{{ reaction.solubility.dP }}</td>
+                      <td>{{ reaction.solubility.dH }}</td>
+                      <td>{{ reaction.solubility.MVol }}</td>
+                  </tr>
+                </table> <!--{{ reaction.solubility }} --></td>
+            <td> {{ reaction.notes }} </td>
+          </tr>
+        </table>
+      </div>
+</div>
+  </div>
+
+</div>
+</br>
+<button class="md-raised md-button md-ink-ripple" type="button" id="update" ng-click="openForm = !openForm"> Update this record </button>
+</div>
+
+</div>
+<div id="historyDetails"> <!--Retrieve history info of entry and put here -->
+<!--
+  <form ng-show="openForm" id="one">
+  <h1>Update Chemical Record</h1>
+
+  <input ng-repeat = "item in propertyNames" class="formInput" placeholder="{{ item.id}}" type="text" required="">
+  <div ng-click="$parent.openSolvents = !openSolvents" ng-repeat = "reaction in reactions" class="formInput">{{ reaction.solvent }}</div>
+  <!--<button ng-click="openSolvents = !openSolvents" ng-repeat="reaction in reactions" class="formInput">{{reaction.solvent}}</button>-->
+  <!--<input class="formInput" placeholder="Molecular Formula" type="text" required="">
+  <input class="formInput" placeholder="Trigger Mechanism" type="text" required="">
+  <input class="formInput" placeholder="Trigger Mechanism" type="text" required="">-->
+  <!--<button ng-click="openSolvents = !openSolvents">Update Solvents</button>-->
+<!--  <button ng-click="openForm = !openForm">Submit Changes</button>-->
+
+
+
+</div>
+<div id="formHolder" ng-show="openForm">
+<form id="one">
+<h1>Update Chemical Record</h1>
+<input class="formInput" placeholder="Name: {{ Data.dat.name }}" type="text" required="" ng-model="updChem.name">
+<input class="formInput" placeholder="InChI: {{ Data.dat.InChI }}" type="text" required="" ng-model="updChem.InChI">
+<!--<input ng-repeat = "item in propertyNames" class="formInput" placeholder="{{item.id}}:{{ item.value }}" type="text" required="">-->
+<input class="formInput" placeholder="Molecular Formula: {{ Data.dat.formula }}" type="text" required="" ng-model="updChem.formula">
+<input class="formInput" placeholder="SMILES: {{ Data.dat.SMILES }}" type="text" required="" ng-model="updChem.SMILES">
+<input class="formInput" placeholder="Morphology: {{ Data.dat.morph }}" type="text" required="" ng-model="updChem.morphology">
+<input class="formInput" placeholder="Trigger Mechanism: {{ Data.dat.triggerMech }}" type="text" required="" ng-model="updChem.mechanism">
+
+<div ng-click="$parent.openSolvents = !openSolvents; $parent.testVar = reaction; alert(testVar)" ng-repeat = "reaction in Data.dat.solventReaction" class="formInput">{{ reaction.hasSolvent.name }}</div>
+<button ng-click="openForm = !openForm; updChem.chem = Data.dat._about; updChem.reactions = Data.dat.solventReaction; updateChem()">Submit Changes</button>
+
+</form>
+
+<form ng-show="openSolvents" id="two">
+<h1>Update Solvents</h1>
+<!--<input ng-repeat = "reaction in testVar" class="formInput" placeholder="{{ reaction }}" type="text" required="">-->
+<input class="formInput" placeholder="Reaction: {{ testVar._about }}" type="text" required="" ng-model="upd.reaction" readonly>
+<input class="formInput" placeholder="Solvent: {{ testVar.hasSolvent.name }}" type="text" id="solventNameUpdate" required="" ng-model="upd.hasSolventName">
+<input class="formInput" placeholder="SMILES: {{ testVar.hasSolvent.SMILES }}" type="text" id="solventSMILESUpdate" required="" ng-model="upd.hasSolventSMILES">
+<input class="formInput" placeholder="Critical Gel Concentration: {{ testVar.hasCGC }}" type="text" id="solventCGCUpdate" required="" ng-model="upd.hasCGC" >
+<label class="formInput">
+  Critical Gel Concentration Unit: </br>
+    <input type="radio" ng-model="upd.unit" value="UO:0000063">
+     millimolars
+  <!--</label>
+  <label>-->
+      <input type="radio" ng-model="upd.unit" value="EFO:0004384">
+       Percentage-Weight
+    </label>
+<!--<input class="formInput" placeholder="Rheology: {{ testVar.hasRheology }}" type="text" id="solventRheologyUpdate" required="" ng-model="upd.hasRheology" >-->
+<input class="formInput" placeholder="Notes: {{ testVar.notes }}" type="text" id="solventNotesUpdate" required="" ng-model="upd.notes">
+
+<!--<input class="formInput" placeholder="Molecular Formula" type="text" required="">
+<input class="formInput" placeholder="Trigger Mechanism" type="text" required="">
+<input class="formInput" placeholder="Trigger Mechanism" type="text" required="">-->
+<button ng-click="openSolvents = !openSolvents; upd.reaction = testVar._about; upd.original = testVar.hasSolvent.name; updateReaction()";>Confirm</button>
+
+</form>
+
+</div>
+</div>
